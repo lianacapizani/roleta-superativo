@@ -24,8 +24,9 @@ const sectors = [
     id: 1,
     icon: <MdOutlineNightsStay size={28} />,
     label: "Sono",
-    question: "Dormir bem influencia no ganho de massa muscular?",
-    answer: "Sim! Durante o sono ocorre a recuperação muscular.",
+    question:
+      "Dormir bem é tipo carregar o celular: quanto menos, mais devagar seu músculo cresce. Verdadeiro ou falso?",
+    answer: "Verdadeiro! O sono ajuda na recuperação muscular e crescimento.",
   },
   {
     id: 2,
@@ -38,8 +39,9 @@ const sectors = [
     id: 3,
     icon: <FaRunning size={28} />,
     label: "Corrida",
-    question: "Verdadeiro ou falso: correr em jejum queima mais gordura?",
-    answer: "Falso — pode aumentar a queima de massa muscular e a fadiga.",
+    question:
+      "Verdadeiro ou falso: correr logo após comer é uma boa ideia para queimar mais calorias?",
+    answer: "Falso — pode causar desconforto e até náuseas.",
   },
   {
     id: 4,
@@ -59,8 +61,10 @@ const sectors = [
     id: 6,
     icon: <GiMeditation size={28} />,
     label: "Alongamento",
-    question: "É bom alongar antes do treino intenso?",
-    answer: "Apenas levemente; o ideal é alongar após o aquecimento.",
+    question:
+      "Verdadeiro ou falso: fazer alongamento depois do treino ajuda na recuperação muscular?",
+    answer:
+      "Verdade! Alongar após o treino ajuda a reduzir a tensão e melhorar a flexibilidade.",
   },
   {
     id: 7,
@@ -73,8 +77,8 @@ const sectors = [
     id: 8,
     icon: <FaLaugh size={28} />,
     label: "Humor",
-    question: "Qual é o exercício preferido de quem gosta de fofocar?",
-    answer: "O agacha-mento 😂",
+    question: "Qual é o aparelho favorito de quem não gosta de treinar? ",
+    answer: "O ar-condicionado.😂",
   },
   {
     id: 9,
@@ -217,6 +221,7 @@ export default function RoletaSuperAtivo() {
             transition: spinning
               ? "transform 4.5s cubic-bezier(.2,.9,.2,1)"
               : "none",
+            overflow: "visible",
           }}
         >
           {sectors.map((s, i) => {
@@ -245,10 +250,11 @@ export default function RoletaSuperAtivo() {
                   strokeWidth="1"
                 />
                 <foreignObject
-                  x={iconX - 42}
+                  x={iconX - 50}
                   y={iconY - 26}
-                  width={78}
-                  height={64}
+                  width={100}
+                  height={60}
+                  style={{ overflow: "visible" }} // <- libera corte
                 >
                   <div
                     style={{
@@ -261,10 +267,13 @@ export default function RoletaSuperAtivo() {
                       textAlign: "center",
                       transform: `rotate(${-rotation}deg)`, // <- faz o conteúdo ficar reto
                       transformOrigin: "center center",
+                      whiteSpace: "nowrap", // evita quebra de linha cortada
+                      overflow: "visible", // deixa o texto “vazar” se precisar
+                      fontSize: 12,
                     }}
                   >
                     {s.icon}
-                    <div style={{ fontSize: 12 }}>{s.label}</div>
+                    <div>{s.label}</div>
                   </div>
                 </foreignObject>
               </g>
