@@ -109,21 +109,21 @@ const WheelStage = styled.div`
 
 const Pointer = styled.div`
   position: absolute;
-  top: 0;
+  top: 2%;
   left: 50%;
   transform: translate(-50%, -50%); // invertida
   width: 0;
   height: 0;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-top: 35px solid ${Colors.secondary900}; // seta apontando pra baixo
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-top: 40px solid ${Colors.secondary900}; // seta apontando pra baixo
   z-index: 25;
 `;
 
 const Controls = styled.div`
   display: flex;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 16px;
 `;
 
 const Button = styled.button`
@@ -203,7 +203,7 @@ export default function RoletaSuperAtivo() {
   return (
     <WheelWrap>
       {/* Logo no topo esquerdo */}
-      <div style={{ position: "absolute", top: 0, left: -180 }}>
+      <div style={{ position: "absolute", top: 16, left: -200 }}>
         <img
           src="/assets/logo.png"
           alt="SuperATIVO logo"
