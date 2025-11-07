@@ -7,7 +7,7 @@ const Global = createGlobalStyle`
   body {
     margin: 0;
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(180deg, ${Colors.primary50}, ${Colors.background});
+    background: ${Colors.secondary50};
     color: ${Colors.neutral900};
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
@@ -15,6 +15,7 @@ const Global = createGlobalStyle`
 `;
 
 const Page = styled.main`
+  background: ${Colors.secondary10};
   min-height: 100vh;
   display:flex;
   align-items:center;
